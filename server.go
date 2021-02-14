@@ -46,3 +46,10 @@ func (s *Server) Check(ctx context.Context, in *healthpb.HealthCheckRequest) (*h
 func (s *Server) Watch(in *healthpb.HealthCheckRequest, stream healthpb.Health_WatchServer) error {
 	return status.Errorf(codes.Unimplemented, "Unimplemented")
 }
+
+func (s *Server) AddHealthCheck(service string, check HealthCheck) {
+  if _, ok := s.checks[service]; !ok {
+    s.checks[service] = []HealthCheck{}
+  }
+  s.checks[service] = append(s.checks[service], check)
+}
