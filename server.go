@@ -19,10 +19,8 @@ type Server struct {
 }
 
 // NewServer returns a new Server.
-func NewServer(checks map[string][]HealthCheck) *Server {
-	return &Server{
-		checks: checks,
-	}
+func NewServer() *Server {
+	return &Server{}
 }
 
 func (s *Server) Check(ctx context.Context, in *healthpb.HealthCheckRequest) (*healthpb.HealthCheckResponse, error) {
