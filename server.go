@@ -9,7 +9,7 @@ import (
 )
 
 type HealthCheck interface {
-	isHealthy() bool
+	IsHealthy() bool
 }
 
 // Server implements grpc health checks
@@ -26,7 +26,7 @@ func NewServer() *Server {
 func (s *Server) Check(ctx context.Context, in *healthpb.HealthCheckRequest) (*healthpb.HealthCheckResponse, error) {
 	if checks, ok := s.checks[in.Service]; ok {
 		for _, c := range checks {
-			if !c.isHealthy() {
+			if !c.IsHealthy() {
 				return &healthpb.HealthCheckResponse{
 					Status: healthpb.HealthCheckResponse_NOT_SERVING,
 				}, nil
