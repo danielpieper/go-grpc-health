@@ -1,4 +1,4 @@
-package health
+package grpc_health
 
 import (
 	"testing"

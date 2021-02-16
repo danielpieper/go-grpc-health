@@ -1,4 +1,4 @@
-module github.com/danielpieper/health
+module github.com/danielpieper/go-grpc-health
 
 go 1.15
 
