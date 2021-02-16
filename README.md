@@ -1,4 +1,4 @@
-![Go](https://github.com/danielpieper/health/workflows/Go/badge.svg?branch=main)
+![Go](https://github.com/danielpieper/go-grpc-health/workflows/Go/badge.svg?branch=main)
 
-# health
+# go-grpc-health
 Simple health checks following the GRPC Health Checking Protocol
